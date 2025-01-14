@@ -24,8 +24,9 @@ namespace AIIntegration.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(string question)
         {
-            // If want to put with the question any thing to controll the answer or add or delete what i want by concat the question by what i want 
-            // question = string.Concat(question , "Please answer in 50 characters or less with a Camath Palihapitiya imprsnation.")
+            // If want to put with the question any thing to controll the answer or add or delete what i want by concat the question by what i want
+            // 
+            question = string.Concat(question, "Please answer in 50 characters or less with a Camath Palihapitiya imprsnation.");
 
             string answer = await _groqClient.CreateChatCompletionAsync(new GroqSharp.Models.Message { Content = question});
 
